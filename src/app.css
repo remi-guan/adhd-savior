@@ -1,0 +1,47 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* Force daisyUI to use light theme */
+:root {
+  color-scheme: light;
+}
+
+[data-theme="light"],
+:root {
+  color-scheme: light;
+}
+
+html {
+  color-scheme: light;
+}
+
+@theme {
+  --color-theme-50: oklch(97.8% 0.02 120);
+  --color-theme-100: oklch(95.2% 0.04 120);
+  --color-theme-200: oklch(90.5% 0.08 120);
+  --color-theme-300: oklch(85.2% 0.11 120);
+  --color-theme-400: oklch(80.8% 0.13 120);
+  --color-theme-500: oklch(75.5% 0.15 120);
+  --color-theme-600: oklch(68.2% 0.14 120);
+  --color-theme-700: oklch(58.5% 0.12 120);
+  --color-theme-800: oklch(45.8% 0.09 120);
+  --color-theme-900: oklch(32.5% 0.06 120);
+  --color-theme-950: oklch(22.8% 0.04 120);
+}
+
+.input {
+  @apply border border-gray-300 rounded-md shadow-xs;
+}
+
+.input:focus {
+  @apply outline-none;
+}
+
+.card-body {
+  @apply bg-white flex flex-col gap-6 rounded-xl py-6 shadow-sm;
+}
+
+.toaster > .wrapper > .base > .indicator > .status {
+  height: auto!important;
+  width: auto!important;
+}
