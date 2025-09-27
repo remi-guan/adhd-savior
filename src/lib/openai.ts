@@ -1,7 +1,8 @@
 import OpenAI from 'openai';
 import type { Dispatcher } from 'undici';
 import type { ChatCompletionMessageParam } from 'openai/resources/chat/completions';
-import { OPENAI_API_KEY, OPENAI_PROXY_URL } from '$env/static/private';
+import { OPENAI_PROXY_URL } from '$env/dynamic/private';
+import { OPENAI_API_KEY } from '$env/static/private';
 
 // Input interface for the generation function
 export interface GenerationInput {
