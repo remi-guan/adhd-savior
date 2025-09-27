@@ -1,7 +1,7 @@
 import OpenAI from 'openai';
 import type { Dispatcher } from 'undici';
 import type { ChatCompletionMessageParam } from 'openai/resources/chat/completions';
-import { OPENAI_PROXY_URL } from '$env/dynamic/private';
+import { env } from '$env/dynamic/private';
 import { OPENAI_API_KEY } from '$env/static/private';
 
 // Input interface for the generation function
@@ -23,6 +23,7 @@ export async function generateResponse({ input, systemPrompt, imageUrl }: Genera
   };
 
   // Add proxy configuration if OPENAI_PROXY_URL is set
+  const OPENAI_PROXY_URL = env.OPENAI_PROXY_URL;
   if (OPENAI_PROXY_URL) {
     console.log(`🔗 Configuring OpenAI to use proxy: ${OPENAI_PROXY_URL} `);
 

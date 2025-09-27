@@ -11,7 +11,7 @@ declare global {
 }
 
 declare module '$env/dynamic/private' {
-	export const OPENAI_PROXY_URL: string;
+	export const env: Record<string, string | undefined>;
 }
 
 export {};
